@@ -9,22 +9,28 @@ import os.path
 
 #GENERATE PEPTIDES
 #--------------------------------------------------------------------------
-from itertools import combinations
+from itertools import permutations
 
 #list of aminoacids
 aacids = ["A","R","N","D","C","E","Q","G","H","I","L","K","M","F","P","S","T","W","Y","V"]
 
-def generateCombination(chars, n):
+def generatePermutations(chars, n):
     """
     Generate all combinations of letters in chars of size n
     """
-    combilist = [''.join(comb) for comb in combinations(chars, n)]
+    combilist = [''.join(perm) for perm in permutations(chars, n)]
     return combilist
 
-#create npeps
-dipeps = generateCombination(aacids,2)
-tripeps = generateCombination(aacids,3)
-tetrapeps = generateCombination(aacids,4)
+# create npeps
+dipeps = generatePermutations(aacids, 2)
+tripeps = generatePermutations(aacids, 3)
+tetrapeps = generatePermutations(aacids, 4)
+di = len(dipeps)
+tri = len(tripeps)
+tetra = len(tetrapeps)
+print("di", di)
+print("tri", tri)
+print("tetra", tetra)
 
 #output location file header preparation
 #f_tripeps = open(os.path.join(npep_dir, "tripeps.txt"), "w")
