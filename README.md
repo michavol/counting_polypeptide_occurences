@@ -1,4 +1,4 @@
-# counting_polypeptide_occurences
+# counting_peptide_occurences
 
 This program counts the number of occurences of n-peptides in given proteins.
 People who know about biology can probably do some cool stuff with it.
